@@ -1,0 +1,14 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  datasource:
+    url: jdbc:mysql://${host:localhost}:${port:3306}/${database:librarybd}?useUnicode=true&characterEncoding=utf8&useSSL=false&requireSSL=false
+    username: root
+    password: ${password:toor}
+
