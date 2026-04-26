@@ -1,0 +1,1999 @@
+{
+  "info": {
+    "_postman_id": "9b98e23d-7bc5-4530-a7c1-3d2e9ae87f55",
+    "name": "Library Orden System API",
+    "description": "Allow order books, manage clients and inventory\n\nContact Support:\n Name: Jose Caceres\n Email: sebashh26@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "10706640",
+    "_collection_link": "https://go.postman.co/collection/10706640-9b98e23d-7bc5-4530-a7c1-3d2e9ae87f55?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v1",
+          "item": [
+            {
+              "name": "clients",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "Get client by ID",
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/clients/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "clients",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "string"
+                            }
+                          ]
+                        },
+                        "description": "Retrieves a client by its ID"
+                      },
+                      "response": [
+                        {
+                          "name": "Client found",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/clients/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "clients",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "string"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"age\": 2027,\n  \"dni\": \"string\"\n}"
+                        },
+                        {
+                          "name": "Client not found",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/clients/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "clients",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "string"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"age\": 2027,\n  \"dni\": \"string\"\n}"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Update client",
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"age\": 19,\n  \"dni\": \"1718317561\",\n  \"name\": \"gracie\",\n  \"surname\": \"vallejo\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/clients/8f2c66d7-712e-4dcb-be81-fc1e744d5a6c",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "clients",
+                            "8f2c66d7-712e-4dcb-be81-fc1e744d5a6c"
+                          ]
+                        },
+                        "description": "Updates the information of a client"
+                      },
+                      "response": [
+                        {
+                          "name": "Client updated successfully",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"age\": 7014,\n  \"dni\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"id\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/clients/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "clients",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "string"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"age\": 2027,\n  \"dni\": \"string\"\n}"
+                        },
+                        {
+                          "name": "Client update data",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"age\": 7014,\n  \"dni\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"id\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/clients/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "clients",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "string"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"age\": 2027,\n  \"dni\": \"string\"\n}"
+                        },
+                        {
+                          "name": "Client not found",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"age\": 7014,\n  \"dni\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"id\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/clients/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "clients",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "string"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"age\": 2027,\n  \"dni\": \"string\"\n}"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Delete client",
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/clients/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "clients",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "string"
+                            }
+                          ]
+                        },
+                        "description": "no delete only desactive"
+                      },
+                      "response": [
+                        {
+                          "name": "Client deleted successfully",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/clients/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "clients",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "string"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        },
+                        {
+                          "name": "Client not found",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/clients/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "clients",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "string"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "dni",
+                  "item": [
+                    {
+                      "name": "{dni}",
+                      "item": [
+                        {
+                          "name": "Get client by ID",
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/clients/dni/:dni",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "clients",
+                                "dni",
+                                ":dni"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "dni",
+                                  "value": "string"
+                                }
+                              ]
+                            },
+                            "description": "Retrieves a client by its ID"
+                          },
+                          "response": [
+                            {
+                              "name": "Client found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "*/*"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v1/clients/dni/:dni",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v1",
+                                    "clients",
+                                    "dni",
+                                    ":dni"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "dni",
+                                      "value": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "*/*"
+                                }
+                              ],
+                              "cookie": [],
+                              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"age\": 2027,\n  \"dni\": \"string\"\n}"
+                            },
+                            {
+                              "name": "Client not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "*/*"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v1/clients/dni/:dni",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v1",
+                                    "clients",
+                                    "dni",
+                                    ":dni"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "dni",
+                                      "value": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "*/*"
+                                }
+                              ],
+                              "cookie": [],
+                              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"age\": 2027,\n  \"dni\": \"string\"\n}"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Create a new client",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"age\": 3622,\n  \"dni\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/clients",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "clients"
+                      ]
+                    },
+                    "description": "Creates a new client in the system with http protocol"
+                  },
+                  "response": [
+                    {
+                      "name": "Client created successfully",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"age\": 3622,\n  \"dni\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/clients",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "clients"
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"age\": 2027,\n  \"dni\": \"string\"\n}"
+                    },
+                    {
+                      "name": "Invalid request data",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"age\": 3622,\n  \"dni\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/clients",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "clients"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"age\": 2027,\n  \"dni\": \"string\"\n}"
+                    },
+                    {
+                      "name": "Client already exists",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"age\": 3622,\n  \"dni\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/clients",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "clients"
+                          ]
+                        }
+                      },
+                      "status": "Conflict",
+                      "code": 409,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"age\": 2027,\n  \"dni\": \"string\"\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "books",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "Get book by ID",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "file",
+                          "file": {}
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/books/80382cdd-75e5-4cee-a3ce-cc9795d53bdc",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "books",
+                            "80382cdd-75e5-4cee-a3ce-cc9795d53bdc"
+                          ]
+                        },
+                        "description": "Retrieves a book by its ID"
+                      },
+                      "response": [
+                        {
+                          "name": "Book found",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/books/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "books",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "string"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"id\": \"string\",\n  \"title\": \"string\",\n  \"author\": \"string\",\n  \"isbn\": \"string\",\n  \"bookStatus\": \"AVAILABLE\"\n}"
+                        },
+                        {
+                          "name": "Book not found",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/books/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "books",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "string"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"id\": \"string\",\n  \"title\": \"string\",\n  \"author\": \"string\",\n  \"isbn\": \"string\",\n  \"bookStatus\": \"AVAILABLE\"\n}"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Update book",
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"author\": \"jose\",\n  \"bookStatus\": \"AVAILABLE\",\n  \"isbn\": \"022384179\",\n  \"title\": \"arquitectura hexagonal\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/books/80382cdd-75e5-4cee-a3ce-cc9795d53bdc",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "books",
+                            "80382cdd-75e5-4cee-a3ce-cc9795d53bdc"
+                          ]
+                        },
+                        "description": "Updates the information of a book"
+                      },
+                      "response": [
+                        {
+                          "name": "Book updated successfully",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"author\": \"string\",\n  \"bookStatus\": \"BORROWED\",\n  \"isbn\": \"string\",\n  \"title\": \"string\",\n  \"id\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/books/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "books",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "string"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"id\": \"string\",\n  \"title\": \"string\",\n  \"author\": \"string\",\n  \"isbn\": \"string\",\n  \"bookStatus\": \"AVAILABLE\"\n}"
+                        },
+                        {
+                          "name": "Book update data",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"author\": \"string\",\n  \"bookStatus\": \"BORROWED\",\n  \"isbn\": \"string\",\n  \"title\": \"string\",\n  \"id\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/books/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "books",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "string"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"id\": \"string\",\n  \"title\": \"string\",\n  \"author\": \"string\",\n  \"isbn\": \"string\",\n  \"bookStatus\": \"AVAILABLE\"\n}"
+                        },
+                        {
+                          "name": "Book not found",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"author\": \"string\",\n  \"bookStatus\": \"BORROWED\",\n  \"isbn\": \"string\",\n  \"title\": \"string\",\n  \"id\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/books/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "books",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "string"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"id\": \"string\",\n  \"title\": \"string\",\n  \"author\": \"string\",\n  \"isbn\": \"string\",\n  \"bookStatus\": \"AVAILABLE\"\n}"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "available",
+                  "item": [
+                    {
+                      "name": "Get available books",
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/books/available",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "books",
+                            "available"
+                          ]
+                        },
+                        "description": "Retrieves available books in the system"
+                      },
+                      "response": [
+                        {
+                          "name": "Book found",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/books/available",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "books",
+                                "available"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "[\n  {\n    \"id\": \"string\",\n    \"title\": \"string\",\n    \"author\": \"string\",\n    \"isbn\": \"string\",\n    \"bookStatus\": \"BORROWED\"\n  },\n  {\n    \"id\": \"string\",\n    \"title\": \"string\",\n    \"author\": \"string\",\n    \"isbn\": \"string\",\n    \"bookStatus\": \"AVAILABLE\"\n  }\n]"
+                        },
+                        {
+                          "name": "Books not found",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/books/available",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "books",
+                                "available"
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "[\n  {\n    \"id\": \"string\",\n    \"title\": \"string\",\n    \"author\": \"string\",\n    \"isbn\": \"string\",\n    \"bookStatus\": \"BORROWED\"\n  },\n  {\n    \"id\": \"string\",\n    \"title\": \"string\",\n    \"author\": \"string\",\n    \"isbn\": \"string\",\n    \"bookStatus\": \"AVAILABLE\"\n  }\n]"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Create a new book",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"author\": \"string\",\n  \"isbn\": \"string\",\n  \"title\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/books",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "books"
+                      ]
+                    },
+                    "description": "Creates a new book in the system with http protocol"
+                  },
+                  "response": [
+                    {
+                      "name": "Book created successfully",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"author\": \"string\",\n  \"isbn\": \"string\",\n  \"title\": \"string\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/books",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "books"
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"id\": \"string\",\n  \"title\": \"string\",\n  \"author\": \"string\",\n  \"isbn\": \"string\",\n  \"bookStatus\": \"AVAILABLE\"\n}"
+                    },
+                    {
+                      "name": "Invalid request data",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"author\": \"string\",\n  \"isbn\": \"string\",\n  \"title\": \"string\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/books",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "books"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"id\": \"string\",\n  \"title\": \"string\",\n  \"author\": \"string\",\n  \"isbn\": \"string\",\n  \"bookStatus\": \"AVAILABLE\"\n}"
+                    },
+                    {
+                      "name": "Book already exists",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"author\": \"string\",\n  \"isbn\": \"string\",\n  \"title\": \"string\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/books",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "books"
+                          ]
+                        }
+                      },
+                      "status": "Conflict",
+                      "code": 409,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"id\": \"string\",\n  \"title\": \"string\",\n  \"author\": \"string\",\n  \"isbn\": \"string\",\n  \"bookStatus\": \"AVAILABLE\"\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "order-books",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "Get order book by ID",
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/order-books/3",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "order-books",
+                            "3"
+                          ]
+                        },
+                        "description": "Retrieves a order book by its ID"
+                      },
+                      "response": [
+                        {
+                          "name": "Order Book found",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/order-books/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "order-books",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "1540"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"idOrderBook\": 6108,\n  \"dateOrder\": \"1987-04-08T22:32:51.997Z\",\n  \"client\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"surname\": \"string\",\n    \"dni\": \"string\",\n    \"age\": 5629\n  },\n  \"books\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"author\": \"string\",\n      \"isbn\": \"string\",\n      \"bookStatus\": \"BORROWED\",\n      \"borrowed\": true\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"author\": \"string\",\n      \"isbn\": \"string\",\n      \"bookStatus\": \"BORROWED\",\n      \"borrowed\": false\n    }\n  ],\n  \"orderBookStatus\": \"COMPLETED\"\n}"
+                        },
+                        {
+                          "name": "Order Book not found",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/order-books/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "order-books",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "1540"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"idOrderBook\": 6108,\n  \"dateOrder\": \"1987-04-08T22:32:51.997Z\",\n  \"client\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"surname\": \"string\",\n    \"dni\": \"string\",\n    \"age\": 5629\n  },\n  \"books\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"author\": \"string\",\n      \"isbn\": \"string\",\n      \"bookStatus\": \"BORROWED\",\n      \"borrowed\": true\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"author\": \"string\",\n      \"isbn\": \"string\",\n      \"bookStatus\": \"BORROWED\",\n      \"borrowed\": false\n    }\n  ],\n  \"orderBookStatus\": \"COMPLETED\"\n}"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "cliente",
+                  "item": [
+                    {
+                      "name": "{id}",
+                      "item": [
+                        {
+                          "name": "Get order book by dni",
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/order-books/cliente/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "order-books",
+                                "cliente",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "string"
+                                }
+                              ]
+                            },
+                            "description": "Retrieves a order book by its dni"
+                          },
+                          "response": [
+                            {
+                              "name": "Order Book found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "*/*"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v1/order-books/cliente/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v1",
+                                    "order-books",
+                                    "cliente",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id",
+                                      "value": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "*/*"
+                                }
+                              ],
+                              "cookie": [],
+                              "body": "{\n  \"idOrderBook\": 6108,\n  \"dateOrder\": \"1987-04-08T22:32:51.997Z\",\n  \"client\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"surname\": \"string\",\n    \"dni\": \"string\",\n    \"age\": 5629\n  },\n  \"books\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"author\": \"string\",\n      \"isbn\": \"string\",\n      \"bookStatus\": \"BORROWED\",\n      \"borrowed\": true\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"author\": \"string\",\n      \"isbn\": \"string\",\n      \"bookStatus\": \"BORROWED\",\n      \"borrowed\": false\n    }\n  ],\n  \"orderBookStatus\": \"COMPLETED\"\n}"
+                            },
+                            {
+                              "name": "Order Book not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "*/*"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v1/order-books/cliente/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v1",
+                                    "order-books",
+                                    "cliente",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id",
+                                      "value": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "*/*"
+                                }
+                              ],
+                              "cookie": [],
+                              "body": "{\n  \"idOrderBook\": 6108,\n  \"dateOrder\": \"1987-04-08T22:32:51.997Z\",\n  \"client\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"surname\": \"string\",\n    \"dni\": \"string\",\n    \"age\": 5629\n  },\n  \"books\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"author\": \"string\",\n      \"isbn\": \"string\",\n      \"bookStatus\": \"BORROWED\",\n      \"borrowed\": true\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"author\": \"string\",\n      \"isbn\": \"string\",\n      \"bookStatus\": \"BORROWED\",\n      \"borrowed\": false\n    }\n  ],\n  \"orderBookStatus\": \"COMPLETED\"\n}"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Kafka",
+                  "item": [
+                    {
+                      "name": "Kafka Create a new order book",
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"books\": [\n    {\n      \"id\": \"string\"\n    },\n    {\n      \"id\": \"string\"\n    }\n  ],\n  \"client\": {\n    \"id\": \"string\"\n  },\n  \"dateOrder\": \"2012-05-12T02:48:01.696Z\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/order-books",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "order-books"
+                          ]
+                        },
+                        "description": "Creates a new orde book in the system with http protocol"
+                      },
+                      "response": [
+                        {
+                          "name": "Book created successfully",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"books\": [\n    {\n      \"id\": \"string\"\n    },\n    {\n      \"id\": \"string\"\n    }\n  ],\n  \"client\": {\n    \"id\": \"string\"\n  },\n  \"dateOrder\": \"2012-05-12T02:48:01.696Z\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/order-books",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "order-books"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"idOrderBook\": 6108,\n  \"dateOrder\": \"1987-04-08T22:32:51.997Z\",\n  \"client\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"surname\": \"string\",\n    \"dni\": \"string\",\n    \"age\": 5629\n  },\n  \"books\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"author\": \"string\",\n      \"isbn\": \"string\",\n      \"bookStatus\": \"BORROWED\",\n      \"borrowed\": true\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"author\": \"string\",\n      \"isbn\": \"string\",\n      \"bookStatus\": \"BORROWED\",\n      \"borrowed\": false\n    }\n  ],\n  \"orderBookStatus\": \"COMPLETED\"\n}"
+                        },
+                        {
+                          "name": "Invalid request data",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"books\": [\n    {\n      \"id\": \"string\"\n    },\n    {\n      \"id\": \"string\"\n    }\n  ],\n  \"client\": {\n    \"id\": \"string\"\n  },\n  \"dateOrder\": \"2012-05-12T02:48:01.696Z\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/order-books",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "order-books"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"idOrderBook\": 6108,\n  \"dateOrder\": \"1987-04-08T22:32:51.997Z\",\n  \"client\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"surname\": \"string\",\n    \"dni\": \"string\",\n    \"age\": 5629\n  },\n  \"books\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"author\": \"string\",\n      \"isbn\": \"string\",\n      \"bookStatus\": \"BORROWED\",\n      \"borrowed\": true\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"author\": \"string\",\n      \"isbn\": \"string\",\n      \"bookStatus\": \"BORROWED\",\n      \"borrowed\": false\n    }\n  ],\n  \"orderBookStatus\": \"COMPLETED\"\n}"
+                        },
+                        {
+                          "name": "Book already exists",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"books\": [\n    {\n      \"id\": \"string\"\n    },\n    {\n      \"id\": \"string\"\n    }\n  ],\n  \"client\": {\n    \"id\": \"string\"\n  },\n  \"dateOrder\": \"2012-05-12T02:48:01.696Z\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/order-books",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "order-books"
+                              ]
+                            }
+                          },
+                          "status": "Conflict",
+                          "code": 409,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"idOrderBook\": 6108,\n  \"dateOrder\": \"1987-04-08T22:32:51.997Z\",\n  \"client\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"surname\": \"string\",\n    \"dni\": \"string\",\n    \"age\": 5629\n  },\n  \"books\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"author\": \"string\",\n      \"isbn\": \"string\",\n      \"bookStatus\": \"BORROWED\",\n      \"borrowed\": true\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"author\": \"string\",\n      \"isbn\": \"string\",\n      \"bookStatus\": \"BORROWED\",\n      \"borrowed\": false\n    }\n  ],\n  \"orderBookStatus\": \"COMPLETED\"\n}"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Create a new order book",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"books\": [\n    {\n      \"id\": \"string\"\n    },\n    {\n      \"id\": \"string\"\n    }\n  ],\n  \"client\": {\n    \"id\": \"string\"\n  },\n  \"dateOrder\": \"2012-05-12T02:48:01.696Z\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/order-books",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "order-books"
+                      ]
+                    },
+                    "description": "Creates a new orde book in the system with http protocol"
+                  },
+                  "response": [
+                    {
+                      "name": "Book created successfully",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"books\": [\n    {\n      \"id\": \"string\"\n    },\n    {\n      \"id\": \"string\"\n    }\n  ],\n  \"client\": {\n    \"id\": \"string\"\n  },\n  \"dateOrder\": \"2012-05-12T02:48:01.696Z\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/order-books",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "order-books"
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"idOrderBook\": 6108,\n  \"dateOrder\": \"1987-04-08T22:32:51.997Z\",\n  \"client\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"surname\": \"string\",\n    \"dni\": \"string\",\n    \"age\": 5629\n  },\n  \"books\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"author\": \"string\",\n      \"isbn\": \"string\",\n      \"bookStatus\": \"BORROWED\",\n      \"borrowed\": true\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"author\": \"string\",\n      \"isbn\": \"string\",\n      \"bookStatus\": \"BORROWED\",\n      \"borrowed\": false\n    }\n  ],\n  \"orderBookStatus\": \"COMPLETED\"\n}"
+                    },
+                    {
+                      "name": "Invalid request data",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"books\": [\n    {\n      \"id\": \"string\"\n    },\n    {\n      \"id\": \"string\"\n    }\n  ],\n  \"client\": {\n    \"id\": \"string\"\n  },\n  \"dateOrder\": \"2012-05-12T02:48:01.696Z\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/order-books",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "order-books"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"idOrderBook\": 6108,\n  \"dateOrder\": \"1987-04-08T22:32:51.997Z\",\n  \"client\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"surname\": \"string\",\n    \"dni\": \"string\",\n    \"age\": 5629\n  },\n  \"books\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"author\": \"string\",\n      \"isbn\": \"string\",\n      \"bookStatus\": \"BORROWED\",\n      \"borrowed\": true\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"author\": \"string\",\n      \"isbn\": \"string\",\n      \"bookStatus\": \"BORROWED\",\n      \"borrowed\": false\n    }\n  ],\n  \"orderBookStatus\": \"COMPLETED\"\n}"
+                    },
+                    {
+                      "name": "Book already exists",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"books\": [\n    {\n      \"id\": \"string\"\n    },\n    {\n      \"id\": \"string\"\n    }\n  ],\n  \"client\": {\n    \"id\": \"string\"\n  },\n  \"dateOrder\": \"2012-05-12T02:48:01.696Z\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/order-books",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "order-books"
+                          ]
+                        }
+                      },
+                      "status": "Conflict",
+                      "code": 409,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"idOrderBook\": 6108,\n  \"dateOrder\": \"1987-04-08T22:32:51.997Z\",\n  \"client\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"surname\": \"string\",\n    \"dni\": \"string\",\n    \"age\": 5629\n  },\n  \"books\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"author\": \"string\",\n      \"isbn\": \"string\",\n      \"bookStatus\": \"BORROWED\",\n      \"borrowed\": true\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"author\": \"string\",\n      \"isbn\": \"string\",\n      \"bookStatus\": \"BORROWED\",\n      \"borrowed\": false\n    }\n  ],\n  \"orderBookStatus\": \"COMPLETED\"\n}"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ]
+}
