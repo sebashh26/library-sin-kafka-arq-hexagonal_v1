@@ -15,7 +15,62 @@ app:
   name: QR Payment System
   version: 1.1.0
   description: Hexagonal Architecture Library System with H2 Database
+  #topic define where publish and consume the messages, in this case orders topic
+  topic:
+    orders: ${TOPIC_A:orders}
+
 spring:
   profiles:
     #active: h2
-    active: mysql
+    active: ${SPRING_PROFILES_ACTIVE:h2}
+
+
+  kafka:
+    #define the broker kafka host and port, in this case localhost:9092, but can be override by env variable KAFKA_HOST
+    bootstrap-servers: ${KAFKA_HOST:localhost:9092}
+    consumer:
+      auto-commit-interval: 100
+      enable-auto-commit: false
+      security:
+        protocol: PLAINTEXT
+      group-id: ${GROUP_ID:orders-group}
+      auto-offset-reset: latest
+#se combina con la definicion de transacion en el producer, para garantizar que solo se lean los 
+#mensajes que han sido confirmados, es decir, aquellos que han sido publicados de manera completa y exitosa,
+# esto es fundamental para evitar la lectura de mensajes incompletos o en estado intermedio, 
+#lo que puede llevar a inconsistencias en el procesamiento de los datos, especialmente en casos donde se}
+# manejan transacciones financieras o de alta importancia.
+      isolation-level: read-committed
+      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      properties:
+        "[spring.json.trusted.packages]": "*"
+        "[spring.deserializer.key.delegate.class]": org.apache.kafka.common.serialization.StringDeserializer
+        "[spring.deserializer.value.delegate.class]": org.springframework.kafka.support.serializer.JsonDeserializer
+
+    producer:
+#si se tiene idempotente en true, trx id prefi o trx.id  definifo y acks en all, 
+#se garantiza que el mensaje se va a publicar una sola vez, incluso si hay errores o reintentos, 
+#esto es importante para evitar mensajes duplicados en el topic de kafka, esto es una transacción atómica,
+#es decir, o se publica el mensaje completo o no se publica nada, esto es fundamental para mantener 
+#la integridad de los datos y evitar inconsistencias en el sistema, especialmente en casos donde se procesan transacciones financieras o de alta importancia.
+      security:
+        protocol: PLAINTEXT
+      acks: all
+      transaction-id-prefix: "tx-order-${random.uuid}"
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        "[enable.idempotence]": true
+#En resumen:
+#Sí, se reutiliza el mismo ID dentro de la instancia.
+#No hay problema en abrir múltiples transacciones con datos distintos.
+#Lo único que debes evitar es que dos instancias distintas usen el mismo  al mismo tiempo, porque ahí Kafka aborta para proteger la consistencia.
+        "[transactional.id]": order-id-2
+logging:
+  level:
+    root: INFO
+    "[org.springframework.web]": INFO
+    "[org.springframework.kafka]": INFO
+    "[org.springframework.data]": INFO
+    "[com.mitocode]": DEBUG

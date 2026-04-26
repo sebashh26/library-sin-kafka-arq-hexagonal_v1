@@ -5,6 +5,7 @@ ENV MARIADB_ROOT_PASSWORD=toor
 ENV MARIADB_DATABASE=librarybd
 ENV MARIADB_ROOT_HOST="%"
 
+COPY mysql/librarybd.sql /docker-entrypoint-initdb.d/
 #COPY ./scripts/ /docker-entrypoint-initdb.d/
 
 # RUN ls -al /docker-entrypoint-initdb.d/ && sleep 5s
