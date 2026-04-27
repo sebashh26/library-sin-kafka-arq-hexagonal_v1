@@ -55,7 +55,7 @@ public class ClientController {
     }
 	
 	@GetMapping("/dni/{dni}")
-    @Operation(summary = "Get client by ID", description = "Retrieves a client by its ID")
+    @Operation(summary = "Get client by DNI", description = "Retrieves a client by its ID")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Client found"),
             @ApiResponse(responseCode = "404", description = "Client not found")

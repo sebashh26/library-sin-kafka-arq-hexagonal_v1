@@ -7,6 +7,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import com.mitocode.library.domain.model.entity.Book;
 import com.mitocode.library.domain.model.entity.OrderBook;
 import com.mitocode.library.domain.port.out.persistence.OrderBookRepository;
 import com.mitocode.library.infraestructure.out.persistence.adapter.CRUDImpl;
@@ -50,10 +51,10 @@ public class OrderBookRepositoryJPAAdapter extends CRUDImpl<OrderBook, Integer, 
 	}
 
 	@Override
-	public List<OrderBook> findBorrowedBooksByClientDni(String dni) {
-		return repo.findBorrowedBooksByClient_Dni(dni).stream()
-					.map(e -> mapper.map(e, OrderBook.class))
-					.toList();
+	public List<Book> findBorrowedBooksByClientDni(String dni) {
+		return repo.findBorrowedBooksByClientDni(dni).stream()
+				.map(e -> mapper.map(e, Book.class))
+				.toList();
 	}
 
 	@Override

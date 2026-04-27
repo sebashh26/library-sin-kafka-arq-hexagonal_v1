@@ -1,5 +1,7 @@
 package com.mitocode.library.infraestructure.in.web.controller;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mitocode.library.infraestructure.in.web.dto.request.orderbook.CreateOrderBookRequest;
+import com.mitocode.library.infraestructure.in.web.dto.response.BookResponse;
 import com.mitocode.library.infraestructure.in.web.dto.response.OrderBookResponse;
 import com.mitocode.library.infraestructure.in.web.service.OrderBookService;
 
@@ -60,5 +63,13 @@ public class OrderBookController {
         return ResponseEntity.ok(orderBookService.findByDniClientOrderBook(dniClient));
     }
 	
-
+	@GetMapping("/borrowed/client/{id}")
+	@Operation(summary = "Get book borrowed by dni", description = "Retrieves a book borrowed by its dni")
+	@ApiResponses(value = {
+			@ApiResponse(responseCode = "200", description = "Book found"),
+			@ApiResponse(responseCode = "404", description = "Book not found")
+	})
+	public ResponseEntity<List<BookResponse>> findBookBorrowedByDni(@PathVariable("id") String dniClient){
+		return ResponseEntity.ok(orderBookService.findBookBorrowedByDni(dniClient));
+	}
 }

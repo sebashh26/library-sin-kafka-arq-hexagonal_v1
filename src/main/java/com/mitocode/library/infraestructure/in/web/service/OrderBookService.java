@@ -1,16 +1,21 @@
 package com.mitocode.library.infraestructure.in.web.service;
 
+import java.util.List;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.mitocode.library.application.command.orderbook.CreateOrderBookCommand;
 import com.mitocode.library.application.query.GetDataByDNIQuery;
+import com.mitocode.library.application.rs.dto.BookRecordDto;
 import com.mitocode.library.application.rs.dto.OrderBookRecordDto;
 import com.mitocode.library.application.usecase.book.CreateOrderBookUseCase;
+import com.mitocode.library.application.usecase.book.GetBookBorrowedByDniUseCase;
 import com.mitocode.library.application.usecase.book.GetOrderByDniClientUseCase;
 import com.mitocode.library.application.usecase.book.GetOrderByIdUseCase;
 import com.mitocode.library.infraestructure.in.web.dto.request.orderbook.CreateOrderBookRequest;
+import com.mitocode.library.infraestructure.in.web.dto.response.BookResponse;
 import com.mitocode.library.infraestructure.in.web.dto.response.OrderBookResponse;
 
 import lombok.RequiredArgsConstructor;
@@ -23,9 +28,13 @@ public class OrderBookService {
 	private final CreateOrderBookUseCase createOrderBookUseCase;
 	private final GetOrderByDniClientUseCase getOrderBookByDniClientUseCase;
 	private final GetOrderByIdUseCase getOrderBookByIdUseCase;
+	private final GetBookBorrowedByDniUseCase getBookBorrowedByDniUseCase;
 
 	@Qualifier("orderBookMapper")
 	private final ModelMapper mapper;
+	
+	@Qualifier("bookMapper")
+	private final ModelMapper bookMapper;
 
 	public OrderBookResponse createOrderBook(CreateOrderBookRequest request) {
 		CreateOrderBookCommand command = mapper.map(request, CreateOrderBookCommand.class);
@@ -42,6 +51,13 @@ public class OrderBookService {
 		OrderBookRecordDto dto = getOrderBookByDniClientUseCase
 				.execute(new GetDataByDNIQuery(dni));
 		return mapper.map(dto, OrderBookResponse.class);
+	}
+	
+	public List<BookResponse> findBookBorrowedByDni(String dni) {
+		List<BookRecordDto> dto = getBookBorrowedByDniUseCase
+				.execute(new GetDataByDNIQuery(dni));
+		return dto.stream()
+				.map(bookDto -> bookMapper.map(bookDto, BookResponse.class)).toList();
 	}
 
 }
