@@ -36,7 +36,7 @@ public class OrderBookKafkaController {
 
 		String correlationId = UUID.randomUUID().toString();
 
-		log.info("Received request to send message to request-merchant topic");
+		log.info("Received request to send message to orders topic");
 
 		orderBookKafkaService.publishOrderBookCreated(request, correlationId);
 

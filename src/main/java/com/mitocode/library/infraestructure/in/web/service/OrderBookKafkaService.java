@@ -20,7 +20,7 @@ public class OrderBookKafkaService {
 	@Value("${app.topic.orders}")
 	private String ordersTopic;
 	
-	@Transactional("kafkaTransactionManager")
+	@Transactional("transactionManager")
 	public void publishOrderBookCreated(CreateOrderBookEventRequest request, String correlationId) {
         // Enviamos el DTO junto con correlationId para trazabilidad
 		request.setCorrelationId(correlationId);

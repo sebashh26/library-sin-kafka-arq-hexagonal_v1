@@ -13,7 +13,7 @@ import com.mitocode.library.infraestructure.out.persistence.exception.ModelNotFo
 
 import lombok.RequiredArgsConstructor;
 
-@Transactional
+//@Transactional
 @RequiredArgsConstructor
 @Component
 public class UpdateBookUseCase {
