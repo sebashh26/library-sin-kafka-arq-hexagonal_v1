@@ -146,6 +146,8 @@ Base URL: `http://localhost:8080` (perfil H2) | `http://localhost:8081` (perfil 
 
 ## Ejecucion Local — Sin Docker Compose
 
+Nota: para cualquiera de los siguientes pasos se debe ubicar en la raiz del proyecto descargado
+
 ### 1. Clonar el repositorio
 
 ```bash
